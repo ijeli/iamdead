@@ -23,6 +23,7 @@
 
 import React from "react";
 // import '../App.css';
+import DiagnosisClick from './DiagnosisClick';
 
 const LoadedSymp = (props) =>
     <div>
@@ -31,10 +32,17 @@ const LoadedSymp = (props) =>
                 {props.symptom}
             </h1>
             <span>
-                <button className = 'btn btn-primary'>{props.disease_1}</button>
-                <button className = 'btn btn-primary'>{props.disease_2}</button>
+                <DiagnosisClick
+                    key = {props.id}
+                    symptom = {props.symptom}
+                    disease_1 = {props.disease_1}
+                    disease_2 = {props.disease_2}
+                    disease_3 = {props.disease_4}
+                    disease_4 = {props.disease_3}
+                />
+                {/* <button className = 'btn btn-primary'>{props.disease_2}</button>
                 <button className = 'btn btn-primary'>{props.disease_3}</button>
-                <button className = 'btn btn-primary'>{props.disease_4}</button>
+                <button className = 'btn btn-primary'>{props.disease_4}</button> */}
             </span>
         </div>
     </div>
