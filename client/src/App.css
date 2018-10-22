@@ -1,0 +1,130 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+button {
+margin: 20px;
+align-items: center;
+}
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Green */
+.success {
+  border-color: #4CAF50;
+  color: green;
+}
+
+.success:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Blue */
+.info {
+  border-color: #2196F3;
+  color: dodgerblue
+}
+
+.info:hover {
+  background: #2196F3;
+  color: white;
+}
+
+/* Orange */
+.warning {
+  border-color: #ff9800;
+  color: orange;
+}
+
+.warning:hover {
+  background: #ff9800;
+  color: white;
+}
+
+/* Red */
+.danger {
+  border-color: #f44336;
+  color: red
+}
+
+.danger:hover {
+  background: #f44336;
+  color: white;
+}
+
+/* Gray */
+.default {
+  border-color: #e7e7e7;
+  color: black;
+}
+
+.default:hover {
+  background: #e7e7e7;
+}
+
+.card {
+
+  
+  align-content: center;
+  border: 4px rgb(99, 99, 99) solid;
+  border-radius: 2px;
+  width:960px;
+  height: 500px;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+
+  
+  position: relative;
+  box-shadow: 4px 4px 10px rgb(56, 56, 56);
+  transition: all .2s ease-in-out;
+}
+a{
+  margin-right: 10px;
+}
+
+body{
+  background-image: url("./images/ignasi_pattern_s.png");
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+}
+
+#Navbar{
+  display: inline;
+  padding-right: 30px;
+}
