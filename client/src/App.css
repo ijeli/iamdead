@@ -97,7 +97,7 @@ align-items: center;
   background: #e7e7e7;
 }
 
-.card {
+/* .card {
 
   
   align-content: center;
@@ -113,7 +113,8 @@ align-items: center;
   position: relative;
   box-shadow: 4px 4px 10px rgb(56, 56, 56);
   transition: all .2s ease-in-out;
-}
+} */
+
 a{
   margin-right: 10px;
 }
