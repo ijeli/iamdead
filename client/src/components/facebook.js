@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FacebookLogin from 'react-facebook-login';
 import '../App.css';
 import API from '../utils/'
 
-export default class Facebook extends Component {
+class Facebook extends React.Component {
     state = {
         isLoggedIn: false,
         userID: '',
@@ -42,10 +42,10 @@ export default class Facebook extends Component {
             this.pushdata();
             fbContent = (
                 <div style={{
-                    width: '400px',
-                    margin: 'autp',
+                    width: '800px',
+                    margin: 'auto',
                     background: '#f4f4f4',
-                    padding: '20px'
+                    padding: '26px'
                 }}>
                 <img src={this.state.picture} alt={this.state.name} />
                 <h2>Welcome {this.state.name}</h2>
@@ -64,3 +64,5 @@ export default class Facebook extends Component {
         return (<div>{fbContent}</div>) 
     }
 }
+
+export default Facebook;
