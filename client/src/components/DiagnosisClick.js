@@ -20,7 +20,7 @@ class DiagnosisClick extends Component {
     
         this.state = {
             modalIsOpen: false,
-            diagnosis: ['holder']
+            diagnosis: ['holder'],
         };
     
         this.openModal = this.openModal.bind(this);
@@ -28,10 +28,16 @@ class DiagnosisClick extends Component {
         this.closeModal = this.closeModal.bind(this);
     }
 
-    openModal() {
-        this.setState({modalIsOpen: true});
+    openModal(evt) {
+        evt.preventDefault();
         // this.setState({diagnosis: this.value});
         // console.log(this.state.diagnosis);
+        let diagnosis = this.state.diagnosis
+        diagnosis.splice(0,1,evt.target.value);
+        this.setState({diagnosis:diagnosis});
+        console.log(diagnosis);
+        console.log(evt.target.value);
+        this.setState({modalIsOpen: true});
     }
     
     afterOpenModal() {
@@ -63,7 +69,7 @@ class DiagnosisClick extends Component {
                     contentLabel="Example Modal"
                 >
                     <div className = 'container'>
-                        <h1>{this.props.symptom}</h1>
+                        <h1>{this.state.diagnosis[0]}</h1>
                         <button className = 'btn btn-primary' onClick={this.closeModal}>Exit</button>    
                     </div>
                 </Modal>
