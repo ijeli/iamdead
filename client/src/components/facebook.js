@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import '../App.css';
-import API from '../utils/'
+import API from '../utils/API'
 
 export default class Facebook extends Component {
     state = {
