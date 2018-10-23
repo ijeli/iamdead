@@ -3,8 +3,7 @@ import ReactModalLogin from 'react-modal-login';
 import {facebookConfig, googleConfig} from "./social-config";
 import PrivacyPolicy from './PrivacyPolicy';
 import Facebook from '../facebook';
-import Home from '../../pages/Home';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 
 
 class LoginModal extends React.Component {
@@ -33,16 +32,11 @@ class LoginModal extends React.Component {
 
     });
   }
-
-  // nextPath(path) {
-  //   this.props.history.push(path)
-  // }
   
   onLoginSuccess(method, response) {
     console.log('logged successfully with ' + method);
     console.log(response);
     if(response.status === 'connected') {
-      // <BrowserRouter><Switch><Route exact path ='/home' component ={Home}/></Switch></BrowserRouter>
     }
 
     }
@@ -60,14 +54,6 @@ class LoginModal extends React.Component {
     this.setState({
       loading: true
     })
-  }
-  userLoggedIn(response, error) {
-    this.setState({
-      userID: response.userID,
-      name: response.name,
-      email: response.email,
-      picture: response.picture.data.url
-    });
   }
   finishLoading() {
     this.setState({
@@ -87,8 +73,8 @@ class LoginModal extends React.Component {
  
     return (
       <div>
-        <Facebook/>
- <PrivacyPolicy/>
+      <PrivacyPolicy/>
+      <Facebook/>
         <button
           className = 'btn-lg btn-primary' onClick={() => this.openModal()}
         >
@@ -129,7 +115,6 @@ class LoginModal extends React.Component {
             }
           }}
         />
-        <BrowserRouter><Switch><Route exact path ='/home' component ={Home}/></Switch></BrowserRouter>
       </div>
     )
   }
