@@ -15,12 +15,12 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(500).json(err));
     },
-
     findOneSymptoms: (req, res) =>{
         db.Symptoms
           . findById(req.params.id)
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
     }
+
 
 };

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../App.css';
+
 import API from '../utils/API/';
 // import HomeModal from '../components/HomeModal';
 import Diagnosis from '../components/Diagnosis';
@@ -29,6 +30,9 @@ class Home extends Component {
         // fetch('/api/symptoms', {
         //     method: 'GET'
         // }).then(function(response) {
+        //     if (response.status >= 400) {
+        //         throw new Error("Bad response from server");
+        //     }
         //     return response.json();
         // }).then(function(data) {
         //     self.setState({symptoms: data});
@@ -36,14 +40,13 @@ class Home extends Component {
 
         API.getAllSymptoms()
         .then((res) => {
-            console.log(res.data);
+            console.log('all data', res.data);
             this.setState({symptoms: res.data});
         })
     }
 
     render(){
         return (
-
             <div className = 'container'>
                 <br></br><br></br>
                 {/* <HomeModal/> */}
@@ -86,24 +89,6 @@ class Home extends Component {
         )
     }
 
-
 }
-
-// const Home = () => 
-//     <div>
-//         <div className='card'>
-//             <div className='symptoms'>
-//                 <h1>Symptoms</h1>
-//             </div>
-//         </div>
-//         <div className='card'>
-//             <div>
-//                 <h1>Diagnosis</h1>
-//                 <p>Result will be pulled from Database here</p>
-//             </div>
-        
-//         </div>
-//     </div>
-
 
 export default Home;

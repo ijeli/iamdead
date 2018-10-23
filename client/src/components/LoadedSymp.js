@@ -23,6 +23,7 @@
 
 import React from "react";
 // import '../App.css';
+
 import DiagnosisClick from './DiagnosisClick';
 
 const LoadedSymp = (props) =>
