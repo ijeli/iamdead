@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Modal from 'react-modal';
+import DiagDesc from './DiagDesc';
 
 const customStyles = {
     content : {
@@ -70,6 +71,9 @@ class DiagnosisClick extends Component {
                 >
                     <div className = 'container'>
                         <h1>{this.state.diagnosis[0]}</h1>
+                        <div>
+                            <DiagDesc/>     
+                        </div>
                         <button className = 'btn btn-primary' onClick={this.closeModal}>Exit</button>    
                     </div>
                 </Modal>
