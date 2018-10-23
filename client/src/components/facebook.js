@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import '../App.css';
+import API from '../utils/'
 
 export default class Facebook extends Component {
     state = {
@@ -20,12 +21,24 @@ export default class Facebook extends Component {
             picture: response.picture.data.url
         });
     }
+
+    pushdata = () => {
+        const newProfile = {
+            email: this.state.email,
+            firstName: this.state.name
+        };
+        API.createProfile(newProfile)
+        .then(console.log(newProfile))
+        .catch((err) => console.log(err))
+    }
+
     componentClicked = () => console.log("clicked");
 
     render() {
         let fbContent;
 
         if(this.state.isLoggedIn) {
+            this.pushdata();
             fbContent = (
                 <div style={{
                     width: '400px',
