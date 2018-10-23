@@ -2,7 +2,11 @@ import React from 'react';
 import ReactModalLogin from 'react-modal-login';
 import {facebookConfig, googleConfig} from "./social-config";
 import PrivacyPolicy from './PrivacyPolicy';
- 
+import Facebook from '../facebook';
+import Home from '../../pages/Home';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+
 class LoginModal extends React.Component {
  
   constructor(props) {
@@ -26,7 +30,7 @@ class LoginModal extends React.Component {
     this.setState({
       showModal: false,
       error: null,
-      Policy: false
+
     });
   }
 
@@ -37,8 +41,13 @@ class LoginModal extends React.Component {
   onLoginSuccess(method, response) {
     console.log('logged successfully with ' + method);
     console.log(response);
+    if(response.status === 'connected') {
+      // <BrowserRouter><Switch><Route exact path ='/home' component ={Home}/></Switch></BrowserRouter>
+    }
+
+    }
     
-}
+
  
   onLoginFail(method, response) {
     console.log('logging failed with ' + method);
@@ -52,10 +61,18 @@ class LoginModal extends React.Component {
       loading: true
     })
   }
- 
+  userLoggedIn(response, error) {
+    this.setState({
+      userID: response.userID,
+      name: response.name,
+      email: response.email,
+      picture: response.picture.data.url
+    });
+  }
   finishLoading() {
     this.setState({
-      loading: false
+      loading: false,
+      userLoggedIn: true
     })
   }
  
@@ -70,6 +87,7 @@ class LoginModal extends React.Component {
  
     return (
       <div>
+        <Facebook/>
  <PrivacyPolicy/>
         <button
           className = 'btn-lg btn-primary' onClick={() => this.openModal()}
@@ -84,7 +102,7 @@ class LoginModal extends React.Component {
           onCloseModal={this.closeModal.bind(this)}
           loading={this.state.loading}
           error={this.state.error}
-          
+          userLoggedIn={this.state.userLoggedIn}
           tabs={{
             afterChange: this.afterTabsChange.bind(this)
           }}
@@ -111,6 +129,7 @@ class LoginModal extends React.Component {
             }
           }}
         />
+        <BrowserRouter><Switch><Route exact path ='/home' component ={Home}/></Switch></BrowserRouter>
       </div>
     )
   }
