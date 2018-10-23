@@ -23,6 +23,7 @@ export default class Facebook extends Component {
     }
 
     pushdata = () => {
+        console.log('pushdata is working');
         const newProfile = {
             email: this.state.email,
             firstName: this.state.name
