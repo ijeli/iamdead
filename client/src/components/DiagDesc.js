@@ -6,6 +6,7 @@ class DiagDesc extends Component {
         return (
             <div>
                 <span>Power</span>
+                <h6>{this.props.diagnosis}</h6>
             </div>
         )
     };

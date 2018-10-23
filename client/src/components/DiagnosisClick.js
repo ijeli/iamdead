@@ -72,7 +72,9 @@ class DiagnosisClick extends Component {
                     <div className = 'container'>
                         <h1>{this.state.diagnosis[0]}</h1>
                         <div>
-                            <DiagDesc/>     
+                            <DiagDesc
+                                diagnosis = {this.state.diagnosis[0]}
+                            />     
                         </div>
                         <button className = 'btn btn-primary' onClick={this.closeModal}>Exit</button>    
                     </div>
