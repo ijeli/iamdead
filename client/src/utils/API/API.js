@@ -12,8 +12,8 @@ export default {
 
     getAllSymptoms: function() {
         return axios.get('/api/symptom/')
+    },
+    getOneSymptoms: function(id) {
+        return axios.get('/api/symptom/'+ id)
     }
-
-    
-
 }
