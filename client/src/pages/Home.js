@@ -6,6 +6,7 @@ import API from '../utils/API/';
 import Diagnosis from '../components/Diagnosis';
 import LoadedSymp from '../components/LoadedSymp';
 import ButtonClick from '../components/ButtonClick';
+import Facebook from '../components/facebook';
 
 class Home extends Component {
     constructor(props) {
@@ -48,6 +49,7 @@ class Home extends Component {
     render(){
         return (
             <div className = 'container'>
+            <Facebook/>
                 <br></br><br></br>
                 {/* <HomeModal/> */}
                 <div className = 'row'>
