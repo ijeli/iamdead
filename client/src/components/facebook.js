@@ -18,7 +18,8 @@ class Facebook extends React.Component {
             userID: response.userID,
             name: response.name,
             email: response.email,
-            picture: response.picture.data.url
+            picture: response.picture.data.url,
+            birthday: response.birthday
         });
     }
 
@@ -26,7 +27,9 @@ class Facebook extends React.Component {
         console.log('pushdata is working');
         const newProfile = {
             email: this.state.email,
-            firstName: this.state.name
+            firstName: this.state.name,
+            birthday: this.state.birthday
+
         };
         API.createProfile(newProfile)
         .then(console.log(newProfile))
@@ -48,8 +51,8 @@ class Facebook extends React.Component {
                     padding: '26px'
                 }}>
                 <img src={this.state.picture} alt={this.state.name} />
-                <h2>Welcome {this.state.name}</h2>
-                Email: {this.state.email}
+                <h2>Welcome! How are you feeling today {this.state.name}?</h2>
+                Your email on file: {this.state.email}
                 </div>
             );
         } else {

@@ -74,7 +74,6 @@ class LoginModal extends React.Component {
     return (
       <div>
       <PrivacyPolicy/>
-      <Facebook/>
         <button
           className = 'btn-lg btn-primary' onClick={() => this.openModal()}
         >
