@@ -27,7 +27,7 @@ class Facebook extends React.Component {
         console.log('pushdata is working');
         const newProfile = {
             email: this.state.email,
-            firstName: this.state.name,
+            firstName: this.state.name.split(" ", 1), //<-- this could be code breaking
             birthday: this.state.birthday
 
         };

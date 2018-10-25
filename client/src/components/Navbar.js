@@ -19,7 +19,7 @@ const Navbar = () => (
       ? 'active' :""
       }
       >
-      <Link to='/'>  Login  </Link>
+      {/* <Link to='/'>  Login  </Link> */}
    </a>
     </li>
     <li className="nav-item">
