@@ -26,10 +26,13 @@ class Facebook extends React.Component {
     pushdata = () => {
         console.log('pushdata is working');
         const newProfile = {
+            // email: this.state.email,
+            // firstName: this.state.name,
+            // birthday: this.state.birthday
+            
             email: this.state.email,
-            firstName: this.state.name.split(" ", 1), //<-- this could be code breaking
-            birthday: this.state.birthday
-
+            theName: this.state.name,
+            DOB: this.state.birthday
         };
         API.createProfile(newProfile)
         .then(console.log(newProfile))
