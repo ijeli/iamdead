@@ -5,8 +5,8 @@ class DiagDesc extends Component {
     render() {
         return (
             <div>
-                <span>Power</span>
-                <h6>{this.props.diagnosis}</h6>
+                <h6>This is where the description of {this.props.diagnosis} from the API </h6>
+
             </div>
         )
     };

@@ -70,13 +70,14 @@ class DiagnosisClick extends Component {
                     contentLabel="Example Modal"
                 >
                     <div className = 'container'>
-                        <h1>{this.state.diagnosis[0]}</h1>
+                        <h1><strong>Your diagnosis of interest is {this.state.diagnosis[0]}</strong></h1>
+                        <br></br>
                         <div>
                             <DiagDesc
                                 diagnosis = {this.state.diagnosis[0]}
                             />     
                         </div>
-                        <button className = 'btn btn-primary' onClick={this.closeModal}>Exit</button>    
+                        <button className = 'btn btn-primary' onClick={this.closeModal} align = 'center'>Exit</button>    
                     </div>
                 </Modal>
             </div>
